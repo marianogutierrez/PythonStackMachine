@@ -14,9 +14,7 @@ Notes on prog4_1:
     of pythons helpful syntax not avaliable in other lanauges. For example, list
     comprehensions with the use of "in" were used to greatly simplify checking
     to see if the given tokens were indeed valid. Thus, simplifying the tokenization
-    and parsing process.
-    
-    Besides that, the program is of the same functioalit and purpose and was the C++
+    and parsing process. Besides that, the program is of the same functionality and purpose and was the C++
     program in prog2_2. 
     
 Notes on prog4_2:
