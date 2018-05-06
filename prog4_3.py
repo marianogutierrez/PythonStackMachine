@@ -25,7 +25,7 @@ def main():
         #print('no lines: ' + str(filelines))
         #print()
         toexec = "nada"
-        while(machine.currentline < filelines):
+        while(machine.currentline <= filelines):
             if(machine.currentline < 0): # if at anytime current line proprty becomes zero
                 print("Trying to execute an invalid line: " + str(machine.currentline))
             try:
