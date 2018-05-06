@@ -41,7 +41,7 @@ Notes on prog4_3:
     printed to standard out. Otherwise, the instruction continues as normal.
     If aat anytime the users skip command for an unconditional jump occurs and produces
     a negative line, an error is raised. An error is also raised whenever memory attemped to
-    be accessed is inavlid, i.e. the memory in the stack machine instantiated does memory
+    be accessed is invalid, i.e. the memory in the stack machine instantiated does memory
     in the nedex requested a.k.a a null access. 
     
     
