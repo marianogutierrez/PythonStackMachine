@@ -18,9 +18,16 @@ Notes on prog4_1:
     program in prog2_2. 
     
 Notes on prog4_2:
-    This program is a behemoth of if-else if. The purpose was to feed the program
-    a list of already validated tokens so that it can execute in a stack machine like
-    fashion. A stack was used to hold numerical values, and dictionary was used 
-    to serve as the computers "memory." By using a dictionary 
+    This program implments a simple stack machine with
+    an ancillary stack and dictionary for "memory." It is a behemoth of if-else if. 
+    The purpose was to feed the program  a list of already Tokenized and Parsed tokens, 
+    so that it can execute in a stack machine like fashion. 
+    The stack is used to hold numerical values, and dictionary is used 
+    to serve as the computers "memory." By using a dictionary, the commands for
+    "get #idx in memory" and "save idx" were greatly simplified, as the error checking to 
+    see if the index was valid was easy to implement. In addition, anytime anything
+    is requested to be popped of the stack, error checking ensures that the stack
+    is of length 2 or is at least not empty. 
+    
     
     
