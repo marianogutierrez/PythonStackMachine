@@ -16,12 +16,14 @@ class StackMachine:
             elif tok == 'pop': # ONLY TIME SOMETHING IS RETURNED
                 if not self.__stack: # If the stack is empty, then you cannot pop
                     raise IndexError("Invalid Memory Access")
+                    return
                 val = int(self.__stack.pop())
                 self.currentline = self.currentline + 1
                 return val
             elif tok == 'add':
                 if len(self.__stack) < 2:
                     raise IndexError("Invalid Memory Access")
+                    return
                 val1 = self.__stack.pop() # note we have strings here
                 num1 = int(val1)
                 val2 = self.__stack.pop()
@@ -32,6 +34,7 @@ class StackMachine:
             elif tok == 'sub':
                 if len(self.__stack) < 2:
                     raise IndexError("Invalid Memory Access")
+                    return
                 val1 = self.__stack.pop()
                 num1 = int(val1)
                 val2 = self.__stack.pop()
@@ -42,6 +45,7 @@ class StackMachine:
             elif tok == 'mul':
                 if len(self.__stack) < 2:
                     raise IndexError("Invalid Memory Access")
+                    return
                 val1 = self.__stack.pop()
                 num1 = int(val1)
                 val2 = self.__stack.pop()
@@ -52,6 +56,7 @@ class StackMachine:
             elif tok == 'div':
                 if len(self.__stack) < 2:
                     raise IndexError("Invalid Memory Access")
+                    return
                 val1 = self.__stack.pop()
                 num1 = int(val1)
                 val2 = self.__stack.pop()
@@ -62,6 +67,7 @@ class StackMachine:
             elif tok == 'mod':
                 if len(self.__stack) < 2:
                     raise IndexError("Invalid Memory Access")
+                    return
                 val1 = self.__stack.pop()
                 num1 = int(val1)
                 val2 = self.__stack.pop()
@@ -72,6 +78,7 @@ class StackMachine:
             elif tok == "skip":
                     if  len(self.__stack) < 2 :
                         raise IndexError("Invalid Memory Access")
+                        return
                     val1 = self.__stack.pop()
                     val2 = self.__stack.pop()
                     if val1 == 0:
@@ -81,6 +88,7 @@ class StackMachine:
             elif tok == "save":
                 if not self.__stack: # if the stack is empty well... cant do much
                     raise IndexError("Invalid Memory Access")
+                    return
                 memIdx = int(toks[i+1]) # where are we are going to save the val at the top of the stack?
                 #if memIdx not in self.__memory: # dictionary
                     #raise IndexError("Invalid Memory access")
@@ -93,9 +101,11 @@ class StackMachine:
             elif tok == "get": # get from the memory location index
                 if not self.__memory: # cant get anything if the nothing was ever saved
                     raise IndexError("Invalid Memory Access")
+                    return
                 memIdx = int(toks[i+1]) # the number that follows the get command
                 if memIdx not in self.__memory: # check if the key was in the dictionary
                     raise IndexError("Invalid Memory Access")
+                    return
                 result = self.__memory[memIdx]
                 self.__stack.append(result) # Now, slap it onto the stack
                 self.currentline = self.currentline + 1

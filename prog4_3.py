@@ -28,6 +28,7 @@ def main():
         while(machine.currentline <= filelines):
             if(machine.currentline < 0): # if at anytime current line proprty becomes zero
                 print("Trying to execute an invalid line: " + str(machine.currentline))
+                return
             try:
                 for line in goodTokens:
                     toexec = line

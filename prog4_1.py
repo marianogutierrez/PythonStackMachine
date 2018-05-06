@@ -18,6 +18,7 @@ def Tokenize(str):
     goodTokens = [x for x in toks if __isValid(x)]
     if len(goodTokens) != len(str.split(' ')): # Are the amount of good tokens equivalent to the amount passed thru?
         raise ValueError("Unexpected token: " + invalid[0]) # first invalid token
+        return
     return goodTokens # list of good tokens has been returned
 
 '''
@@ -33,8 +34,10 @@ def __twopart(cmds): # takes in a list
           return True
         else:
           raise ValueError("second token in two part command is not a number")
+          return
     else:
         raise ValueError("Failed to provide permissable two part command")
+        return
 
 
 def __onepart(cmd):
@@ -43,6 +46,7 @@ def __onepart(cmd):
         return True
     else:
         raise ValueError("Not a one part command.")
+        return
 
 
 # takes the list! of the tokens that have already been tokenized
