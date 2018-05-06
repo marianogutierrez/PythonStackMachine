@@ -1,41 +1,52 @@
 import sys
-from prog4_2.py import StackMachine
-from prog4_1.py import Tokenize
-from prog4_1.py import Parse
+from prog4_2 import StackMachine
+from prog4_1 import Tokenize
+from prog4_1 import Parse
 
-if __name__ == "__main__":
-    main()
 
 def main():
     print("Assignment #4-3, Mariano Gutierrez, margutierrez75@gmail.com\n")
     with open(sys.argv[1],mode = 'r') as f: # file resource will auto close once out of scope mode is set to read
         code = [x.strip() for x in f.readlines()] # strip off trailing or additonal white space
-        fileLines = len(code) # code alread has the length so we are good to go
-        fileLines = len(f.readlines) # can also do this
-        code = [x for x in code if len(x) > 0]  # ok ensure that we dont have blanks inputted
-        goodTokens = [Tokenize(x) for x in code] # just tokenize everything 
-        # needs to be split to get correct
+        filelines = len(code) # code alread has the length so we are good to go
+        toks = [x for x in code if len(x) > 0]  # ok ensure that we dont have blanks inputted
+        goodTokens = [Tokenize(x) for x in toks] # just tokenize everything
+        # list within a list, which is what we want...! Each inner list is a line
+        #print(goodTokens) debug
 
         # Tokenization process complete. Onward to Parsing
-        for line in f:
-            parse(line) # parse line by line
-
+        for line in goodTokens: #  This is equivalent to: for i in range(0,len(goodTokens)):
+            toparse = line # give me the first list
+            Parse(toparse)
         # Parsing complete
-
-        machine = StackMachine() # instantiate new machine; no need to use the 'new' keyword
+        machine = StackMachine() # instantiate new machine; note no need to use the 'new' keyword
         #execution process begins
-
-        while(machine.__currentline <= filelines)
-            if(machine.__currentline < 0) # if at anytime current line proprty becomes zero
-                print("Trying to execute an invalid line: " + machine.__currentline)
+        # file lines are indeed correct
+        #print('no lines: ' + str(filelines))
+        #print()
+        toexec = "nada"
+        while(machine.currentline < filelines):
+            if(machine.currentline < 0): # if at anytime current line proprty becomes zero
+                print("Trying to execute an invalid line: " + str(machine.currentline))
             try:
-                for i in range (0,len(goodTokens))
-                    machine.Execute(goodTokens) # process the tokens but not line by line..?
-            except IndexError("Line " + machine.__line + goodTokens[i])
+                for line in goodTokens:
+                    toexec = line
+                    if toexec[0] == 'pop': # recall it is a list and I need to use []
+                        print(machine.Execute(toexec))
+                    else:
+                        machine.Execute(toexec)
+            except IndexError:
+                print("Line " + str(machine.currentline) + " "  + str(toexec[0]) + " caused Invalid Memory Access")
+                # could strip [] or something if necessary above
+                return #
 
-        # Nothing broke
+    # Nothing broke if we get to this point
     print("Program terminated correctly")
     return 0
+
+
+if __name__ == "__main__":
+    main()
 
 '''
 prog4_3.py In python, you are going to implement a driver program. You should import the
@@ -69,20 +80,3 @@ program should print: “Program terminated correctly” and quit.
 
 just means when out of the damn loop
 '''
-
-
-    '''
-    # tokenize and parse all lines of the file
-    # Tokenize first before parsing
-    # a list structure then is used
-    # start indexing at zero
-    #instantiate stack machine
-    # execute instructions line by line as determined by
-    # the current line property UNTILL cline property
-    # is equal or greater than the numer of lines in
-    # the file
-    # currentLine >= # lines in file program should prpint
-    "Program terminated correctly" and quit
-    If at any time the the line becomes negative print
-    "Trying to execute an invalid line: # " and quick
-    '''

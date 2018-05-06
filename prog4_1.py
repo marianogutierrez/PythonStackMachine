@@ -13,10 +13,10 @@ def __isValid(tok):
 # returns the list of the valid tokens , otherwise raise error unexpected token <token>
 # return the first invalid token
 def Tokenize(str):
-    #invalid = [x for x in str.split(' ') if not _isValid(x)] # list comprehension pythonic way
-    str = [x for x in code if len(x) > 0]  # maybe nah
-    goodTokens = [x for x in str.split(' ') if __isValid(x)]
-    if len(goodTokens) != len(str.split(' ')): # Are the amount of good tokens equivalent to thea amount passed thru?
+    toks = [x for x in str.split(' ') if len(x) > 0]
+    invalid = [x for x in toks if not __isValid(x)]
+    goodTokens = [x for x in toks if __isValid(x)]
+    if len(goodTokens) != len(str.split(' ')): # Are the amount of good tokens equivalent to the amount passed thru?
         raise ValueError("Unexpected token: " + invalid[0]) # first invalid token
     return goodTokens # list of good tokens has been returned
 
@@ -26,9 +26,8 @@ def Tokenize(str):
  *  The following tokens must appear on a single line of two tokens, in the correct order: push <int>  save <int> get <int> Any other input is invalid.
 '''
 
-def __twopart(cmds):
+def __twopart(cmds): # takes in a list
     twoPartCmds = ["push", "save", "get"]
-    #cmds = cmds.split(" ") # the entire string was fed, so I gotta split into spaces
     if(cmds[0]) in twoPartCmds: # Was the first part a two part cmds?
         if __isNumber(cmds[1]): # ok, but is the second part a number?
           return True
