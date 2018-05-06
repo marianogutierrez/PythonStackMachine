@@ -28,6 +28,22 @@ Notes on prog4_2:
     see if the index was valid was easy to implement. In addition, anytime anything
     is requested to be popped of the stack, error checking ensures that the stack
     is of length 2 or is at least not empty. 
+
+Notes on prog4_3:
+    This program serves as a driver for the two programs above. It reads a file with
+    code that the stack machine can understand, and begins to execute it.
+    The process is like this:
+    1) Clean up the code in the text file, by rmeoving incidental white space and tab
+    characters.
+    2) Tokenize the file line by line
+    3) Parse the file line by line.
+    4) Execute the instructions. If the "pop" command is detected, then the output is
+    printed to standard out. Otherwise, the instruction continues as normal.
+    If aat anytime the users skip command for an unconditional jump occurs and produces
+    a negative line, an error is raised. An error is also raised whenever memory attemped to
+    be accessed is inavlid, i.e. the memory in the stack machine instantiated does memory
+    in the nedex requested a.k.a a null access. 
+    
     
     
     
