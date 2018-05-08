@@ -39,7 +39,7 @@ Notes on prog4_3:
     3) Parse the file line by line.
     4) Execute the instructions. If the "pop" command is detected, then the output is
     printed to standard out. Otherwise, the instruction continues as normal.
-    If aat anytime the users skip command for an unconditional jump occurs and produces
+    If at anytime the user's skip command for an unconditional jump occurs and produces
     a negative line, an error is raised. An error is also raised whenever memory attemped to
     be accessed is invalid, i.e. the memory in the stack machine instantiated does memory
     in the nedex requested a.k.a a null access. 
