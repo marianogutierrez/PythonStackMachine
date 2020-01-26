@@ -44,7 +44,7 @@ prog4_3.py
    be accessed is invalid, i.e. the memory in the stack machine instantiated does line up with the memory
    in the index requested a.k.a a null access. 
    
-   '''Example compilation python2 prog4_3.py (name of file provided) '''
+   ``` Example compilation python2 prog4_3.py (name of file provided) ```
    The 100fib.sm calculates the first 100 fibonacci numbers.
    The 100prime.sm calculates the first 100 prime numbers.
     
