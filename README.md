@@ -46,8 +46,8 @@ prog4_3.py
    
    ## Compilation 
    ``` Example compilation python2 prog4_3.py (name of file provided) ```
-   The 100fib.sm calculates the first 100 fibonacci numbers.
-   The 100prime.sm calculates the first 100 prime numbers.
+   - fibby.txt calculates the first 100 fibonacci numbers.
+   - prime.txt calculates the first 100 prime numbers.
     
     
     
