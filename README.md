@@ -3,15 +3,15 @@ margutierrez75@gmail.com
 
 # Overview and Included Files:
 The purpose of this program was to practice tokenization and parsing as done in
-program 2. The difference being was to approcah the problem in a pythonic way.
+program 2. The difference being the approach. The problem is solved in a pythonic way.
 
 prog4_1.py
 prog4_2.py
 prog4_3.py
 
 ## Notes on prog4_1:
-   This part of the program made extensive use of list comprehsnsions and some 
-   of pythons helpful syntax not avaliable in other lanauges. For example, list
+   This part of the program made extensive use of list comprehensions and some 
+   of pythons helpful syntax not avaliable in other languages. For example, list
    comprehensions with the use of "in" were used to greatly simplify checking
    to see if the given tokens were indeed valid. Thus, simplifying the tokenization
    and parsing process. Besides that, the program is of the same functionality and purpose and was the C++
