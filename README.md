@@ -3,7 +3,7 @@ margutierrez75@gmail.com
 
 # Overview and Included Files:
 The purpose of this program was to practice tokenization and parsing as done in
-program 2. The difference being the approach. The problem is solved in a pythonic way.
+program 2 (cpp parser). The difference being the approach. The problem is solved in a pythonic way.
 
 prog4_1.py
 prog4_2.py
